@@ -1,3 +1,3 @@
 # hello nest
 
-learning nest js with nomad coder
+learning nest js with nomadcoder
