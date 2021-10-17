@@ -10,7 +10,7 @@ export class MoviesService {
         return this.movies;
     }
 
-    getOne(id: Number) :Movie {
+    getOne(id: number) :Movie {
         const movie = this.movies.find(movie => movie.id === id)
         if(!movie) {
             throw new NotFoundException(`Movie with ID ${id} not found.`)
@@ -18,7 +18,7 @@ export class MoviesService {
         return movie;
     }
 
-    deleteOne(id: Number) {
+    deleteOne(id: number) {
         const movie = this.getOne(id)
         this.movies = this.movies.filter(m => m.id !== movie.id);
     }
@@ -32,7 +32,7 @@ export class MoviesService {
         return movie
     }
 
-    update(id: Number, updateData) {
+    update(id: number, updateData) {
         const movie = this.getOne(id);
         this.deleteOne(id);
         this.movies.push({...movie, ...updateData});
